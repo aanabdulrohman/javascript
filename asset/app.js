@@ -48,18 +48,38 @@ if (nilai == 100){
 }
 
 // if bersarang
-// let password = prompt("Password harus 6 karakter dan mengandung simbol")
-// const symbolPattern = /[!@#$%^&*(),.?":{}|<>]/
-// if (password.length >= 6){
-//   if(password.indexOf(" ") === -1){
-//     if(symbolPattern.test(password)){
-//       console.log("Password valid")
-//     } else {
-//       console.log("Password harus mengandung simbol")
-//     }
-//   } else {
-//     console.log("Password tidak boleh ada spasi")
-//   }
-// } else {
-//   console.log("Password minimal 6 karakter")
-// }
+const usernameFilter = {
+  "yuyus": "admin",
+  "aan": "user"
+}
+function loginFilter(){
+  let password = document.getElementById("password").value;
+  let username = document.getElementById("username").value;
+  const symbolPattern = /[!@#$%^&*(),.?":{}|<>]/
+
+  // validate username
+  if (!(username in usernameFilter)){
+    alert("Invalid username")
+  }
+
+  // validate password
+  if (password.length >= 6){
+    if(password.indexOf(" ") === -1){
+      if(symbolPattern.test(password)){
+        console.log("Password valid")
+      } else {
+        alert("Password harus mengandung simbol")
+      }
+    } else {
+      alert("Password tidak boleh ada spasi")
+    }
+  } else {
+    alert("Password minimal 6 karakter")
+  }
+  
+  if(usernameFilter[username] === "user"){
+    window.location.href = "home-user.html";
+  } else if (usernameFilter[username] === "admin"){
+    window.location.href = "home.html";
+  }
+}
