@@ -83,3 +83,63 @@ function loginFilter(){
     window.location.href = "home.html";
   }
 }
+
+//While
+// const password = 'aanganteng';
+// let masuk = prompt("Passwordnya apa ni..");
+// while (masuk !== password){
+//   masuk = prompt("Password salah, coba lagi..");
+// }
+// alert("Selamat password kamu benar")
+
+// let judul = prompt("Apa yang saya pikirkan");
+// while(true){
+//   judul = prompt(judul);
+//   if (judul === 'stop') break;
+// }
+// alert("oke");
+
+// tebak angka
+// let maximum = parseInt(prompt("masukan nilai maximum"));
+// while (!maximum){
+//     maximum = parseInt(prompt("nilai maximum tidak boleh kosong"));
+// };
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
+// console.log (targetNum)
+
+// let penebak = parseInt(prompt("masukan tebakan kamu"))
+// let attempts = 1;
+// while (parseInt(penebak) !== targetNum){
+//   attempts++;
+//   if (penebak > targetNum){
+//     penebak = prompt("Nilai tebakan terlalu tinggi")
+//   } else {
+//     penebak = prompt("Nilai tebakan terlalu rendah")
+//   }
+// }
+// alert(`Selamat, kamu berhasil menebak angka dengan total percobaan sebanyak ${attempts} kali`)
+
+// for of
+const namaMurid = [
+  ['aan', 'iin', 'uun','een'],
+  ['oon','didi', 'dudu','dede'],
+  ['sisi', 'suussion','seesion', 'dedoji']
+]
+
+for (let row of namaMurid){
+  for (let murid of row){
+    console.log(murid)
+  }
+}
+
+// for in
+const murid = {
+  nama: 'aan',
+  umur: 20,
+  kelas: 'VII A',
+  hobby: 'ngopi'
+}
+
+for (let studen in murid){
+  console.log(`${studen}: ${murid[studen]}`)
+}
